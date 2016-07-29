@@ -5,6 +5,7 @@
 | DEDI | Dedicated server |
 | FTP | File Transfer Protocol, `FloatingTextParticle` |
 | FTxP | `FloatingTextParticle` |
+| GC | Garbage collection (a form of automatic memory management) |
 | IDE | Integrated development environment (application that helps developers write code) |
 | IP | Internet Protocol address |
 | LAN | Local area network (the devices connected to your router) |
