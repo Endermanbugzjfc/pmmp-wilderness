@@ -16,3 +16,5 @@
 | TPS | Ticks per second (indicates how many times a second things are updating) |
 | VPN | Virtual private network |
 | VPS | Virtual private server |
+| FPS | Frames per second |
+| SSH | Secure Shell |
