@@ -7,11 +7,15 @@ If no context is given, any code put in \[PHP\] tags is assumed to be in the con
 ## Variable names
 Here are some variables that are common sense under some contexts:
 * `$this`: see [above](#code-context)
-* `$cmd`: abbreviation of `$command`
-* `$ev`, `$evt`: abbreviation of `$event`
-* `$server` refers to the singleton instance of the server (the one you can get from `Plugin::getServer()`)
-* `$main` or `$plugin` refers to the singleton instance of the main class of the plugin (the one that you can get from `PluginManager::getPlugin()`, in case there is discussion about multiple instances of the main class)
-* `$task` can refer to a `Task` or an `AsyncTask`. Forum members are encouraged to emphasize that `AsyncTask` is not a subclass of `Task`, and to emphasize if you are using an `AsyncTask` rather than a `Task`.
+* `$cmd`: abbreviation of `$command`, instance of `\pocketmine\command\Command`
+* `$ev`, `$evt`: abbreviation of `$event`, instance of `\pocketmine\event\Event`
+* `$inv`: abbreviation of `$inventory`, instance of `\pocketmine\inventory\Inventory`
+* `$level` refers to an instance of `\pocketmine\level\Level`
+* `$block` refers to an instance of `\pocketmine\block\Block`
+* `$item` refers to an instance of `\pocketmine\item\Item`
+* `$server` refers to the singleton instance of the server (e.g. accessible from `\pocketmine\plugin\Plugin::getServer()`)
+* `$main` or `$plugin` refers to the singleton instance of the main class of the plugin (the one that you can get from `\pocketmine\plugin\PluginManager::getPlugin()`, in case there is discussion about multiple instances of the main class)
+* `$task` can refer to an instance of `\pocketmine\scheduler\Task` or `\pocketmine\scheduler\AsyncTask`. Forum members are encouraged to emphasize that `AsyncTask` is not a subclass of `Task`, and to emphasize if you are using an `AsyncTask` rather than a `Task`.
 * Variables that are lowercase of (the last word of) simple class names (e.g. `$player` for `Player`, `$scheduler` for `ServerScheduler`): _the_ singleton instance, or should-be-given values appropriate in that context, of the named class. For example, `$player` refers to an appropriate instance of `Player` (if the question is asking about how to do things *on a player*), and `$event` refers to the current event in event handlers (the event in the nearest stack level if an event is fired within another).
 * In addition to the above rule, the plural form of these words, such as `$players`, refers to an array or a [`Traversable`](//php.net/traversable) or instances of that type.
 
