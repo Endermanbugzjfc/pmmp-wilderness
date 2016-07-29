@@ -8,5 +8,6 @@
 | LAN | Local area network (the devices connected to your router) |
 | MCPE | Minecraft Pocket Edition |
 | MOTD | Message of the day (message displayed to players in the server list) |
-| PM | Pocket Mine (project name) |
+| PHP | PHP: Hypertext Preprocessor (the language PocketMine is written in) |
+| PM | PocketMine (project name) |
 | TPS | Ticks per second (indicates how many times a second things are updating) |
