@@ -6,8 +6,8 @@
 | FTxP | FloatingTextParticle |
 | IDE | Integrated development environment (application that helps developers write code) |
 | LAN | Local area network (the devices connected to your router) |
-| MCPE | Minecraft Pocket Edition |
+| MCPE | Minecraft: Pocket Edition |
 | MOTD | Message of the day (message displayed to players in the server list) |
 | PHP | PHP: Hypertext Preprocessor (the language PocketMine is written in) |
-| PM | PocketMine (project name) |
+| PM | PocketMine (project name), Private Messaging |
 | TPS | Ticks per second (indicates how many times a second things are updating) |
