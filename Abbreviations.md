@@ -3,4 +3,4 @@
 | FTP | File Transfer Protocol, FloatingTextParticle |
 | FTxP | FloatingTextParticle |
 | API | Application programming interface |
-| AI | Artifical intelligence (for mobs) |
+| AI | Artificial intelligence (for mobs) |
