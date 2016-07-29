@@ -1,5 +1,5 @@
 ## Code API (a.k.a. library, SDK)
-Unless otherwise specified, the API for plugin development questions is assumed to be the latest commit on the PocketMine repo, on the master branch or any branch that is considerably dominant in development (such as the `core-rewrite` or `mcpe-0.12` branches in the past), at the time of posting, as well as that on any other repos of dependency plugins specified.
+Unless otherwise specified, the API for plugin development questions is assumed to be the latest commit on the PocketMine repository, on the master branch or any branch that is considerably dominant in development (such as the `core-rewrite` or `mcpe-0.12` branches in the past), at the time of posting, as well as that on any other repositories of dependency plugins specified.
 
 ## Code context
 If no context is given, any code put in \[PHP\] tags is assumed to be in the context of (a non-static class method in) a plugin's main class, run in the main thread. A context **only** refers to _where_ the code is put at, not _when_ the code is run (i.e. the stack is not relevant, e.g. in a task, in an event handler, in a command handler, doesn't matter). In simple words, this context should only affect the values of `$this`, `self::` and `static::`. (`parent::` is assumed to be equivalent to `PluginBase::`).
@@ -28,7 +28,7 @@ A class may be referred to with its simple name (namespace removed). However, so
 * `Item`: We usually assume it to be `pocketmine\item\Item`, especially if `Item::get()` is used
 * `DroppedItem` or `ItemEntity` is the alias for `pocketmine\entity\Item` if `pocketmine\item\Item` is also used in the same code snippet
 * `ItemItem` or `Item` is the alias for `pocketmine\item\Item` if `pocketmine\entity\Item` is also used in the same code snippet
-* `ProtocolInfo` for `pocketmine\network\protocol\Info
+* `ProtocolInfo` for `pocketmine\network\protocol\Info`
 * `TallGrass` is assumed to be `pocketmine\block\TallGrass`
 * `TallGrassPopulator` for `pocketmine\level\generator\populator\TallGrass`
 * `TallGrassObject` for `pocketmine\level\generator\object\TallGrass`
