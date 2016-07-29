@@ -12,6 +12,7 @@
 | LAN | Local area network (the devices connected to your router) |
 | MCPE | Minecraft: Pocket Edition |
 | MOTD | Message of the day (message displayed to players in the server list) |
+| OP | Operator (someone with special privileges on a Minecraft server) |
 | PHP | PHP: Hypertext Preprocessor (the language PocketMine is written in) |
 | PM | PocketMine (project name), Private Messaging |
 | SSH | Secure socket shell |
