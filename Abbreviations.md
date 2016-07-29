@@ -3,6 +3,7 @@
 | AI | Artificial intelligence (for mobs) |
 | API | Application programming interface |
 | DEDI | Dedicated server |
+| FPS | Frames per second |
 | FTP | File Transfer Protocol, `FloatingTextParticle` |
 | FTxP | `FloatingTextParticle` |
 | GC | Garbage collection (a form of automatic memory management) |
@@ -13,8 +14,7 @@
 | MOTD | Message of the day (message displayed to players in the server list) |
 | PHP | PHP: Hypertext Preprocessor (the language PocketMine is written in) |
 | PM | PocketMine (project name), Private Messaging |
+| SSH | Secure socket shell |
 | TPS | Ticks per second (indicates how many times a second things are updating) |
 | VPN | Virtual private network |
 | VPS | Virtual private server |
-| FPS | Frames per second |
-| SSH | Secure Shell |
