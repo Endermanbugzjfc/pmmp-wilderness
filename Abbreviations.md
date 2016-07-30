@@ -7,6 +7,7 @@ Abbrevations or Terms
 | API | Application programming interface | They finally made a documentation for their **API**. |
 | CI | Continuous integration | Does that repository have **CI** enabled? |
 | CS | ClearSky | **CS** came a month after Genisys, the second deriative of PocketMine, was released. |
+| DB | Database | How many tables are in the **DB**? |
 | DDoS | Distributed denial-of-service attack | He launched a **DDoS** attack on our server today, but we were able to mitigate it. |
 | Dedi | Dedicated server | I can't host a server on my PC anymore, we need to get a **Dedi**. |
 | Dev | Developer/Develop/Development | Looking for plugin **devs**. Your question isn't related to plugin **dev**. |
@@ -31,6 +32,7 @@ Abbrevations or Terms
 | PM | PocketMine (project name), Private Messaging | Does she still write **PM** plugins? |
 | PR | Pull request (on GitHub) | Did he merge the **PR** yet? |
 | RCON | Remote console | Does that server have **RCON** enabled? |
+| SQL | Structured Query Language | Does their back-end use an **SQL** database? |
 | SSH | Secure socket shell | You can remotely connect to a computer using **SSH**. |
 | Sync | Synchronize | How to **sync** the SimpleAuth data between two servers? |
 | in Sync | Synchronous | All functions related to the PocketMine server instance should be run **in sync**. |
