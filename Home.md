@@ -4,4 +4,7 @@ Please navigate using the sidebar.
 
 Everyone is welcome to edit.
 
-In case there are disputes, please cross the controversial section out with \~\~ and add a footnote to it explaining why this is controversial.
+In case there are disputes, please cross out the controversial section using the \~\~ syntax (but do not delete it!), then create an issue and reference the issue after the controversial text.
+
+For example:
+> This is an example. This is really an example. This is not an example. This is an example.
