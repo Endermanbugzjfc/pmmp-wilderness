@@ -3,11 +3,12 @@ Abbrevations or Terms
 
 | Term | Meaning(s) | Example |
 | :---: | :----: | :----: |
-| AI | Artificial intelligence (for mobs) | There's still problems with the villager **AI**. They don't know how to locate doors. |
+| AI | Artificial intelligence (for living non-player entities) | There's still a problem with the villager **AI**. They don't know how to locate doors. |
 | API | Application programming interface | They finally made a documentation for their **API**. |
 | CI | Continuous integration | Does that repository have **CI** enabled? |
+| CS | ClearSky | **CS** came a month after Genisys, the second deriative of PocketMine, was released. |
 | DDoS | Distributed denial-of-service attack | He launched a **DDoS** attack on our server today, but we were able to mitigate it. |
-| Dedi | Dedicated server | I can't host a server on my PC anymore, we need to get a **DEDI**. |
+| Dedi | Dedicated server | I can't host a server on my PC anymore, we need to get a **Dedi**. |
 | Dev | Develop/Developer/Development | Looking for plugin **devs**. Your question isn't related to plugin **dev**. |
 | Doc/Docs | Documentation | Your plugin needs better **docs** to make more devs add support for it.
 | DoS | Denial-of-service attack | She threatened them with a **DoS** attack. |
@@ -27,6 +28,7 @@ Abbrevations or Terms
 | Perm | Permission | They messed up the **perms** in the plugin. |
 | PHP | PHP: Hypertext Preprocessor (the language PocketMine is written in) | Why was this written in **PHP**? |
 | PM | PocketMine (project name), Private Messaging | Does she still write **PM** plugins? |
+| PR | Pull request (on GitHub) | Did he merge the **PR** yet? |
 | RCON | Remote console | Does that server have **RCON** enabled? |
 | SSH | Secure socket shell | You can remotely connect to a computer using **SSH**. |
 | Sync | Synchronize | How to **sync** the SimpleAuth data between two servers? |
