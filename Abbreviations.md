@@ -9,7 +9,7 @@ Abbrevations or Terms
 | CS | ClearSky | **CS** came a month after Genisys, the second deriative of PocketMine, was released. |
 | DDoS | Distributed denial-of-service attack | He launched a **DDoS** attack on our server today, but we were able to mitigate it. |
 | Dedi | Dedicated server | I can't host a server on my PC anymore, we need to get a **Dedi**. |
-| Dev | Develop/Developer/Development | Looking for plugin **devs**. Your question isn't related to plugin **dev**. |
+| Dev | Developer/Develop/Development | Looking for plugin **devs**. Your question isn't related to plugin **dev**. |
 | Doc/Docs | Documentation | Your plugin needs better **docs** to make more devs add support for it.
 | DoS | Denial-of-service attack | She threatened them with a **DoS** attack. |
 | Dup | Duplication | This thread is a **dup**. Please google it. |
@@ -20,6 +20,7 @@ Abbrevations or Terms
 | IDE | Integrated development environment (application that helps developers write code) | Which **IDE** do you use? |
 | IM | ImagicalMine | **IM** was the first PocketMine derivative that threatened the community's survival. |
 | IP | Internet Protocol address | Do you know his **IP** address? |
+| IRC | Internet Relay Chat | Though the forums may seem empty, plenty of users hang out at the **IRC**. |
 | LAN | Local area network (the devices connected to your router) | If not port-forwarded, the server will only be visible on your **LAN**. |
 | MCPE/MPE | Minecraft: Pocket Edition | There's been so many updates for **MCPE** recently. |
 | MOTD | Message of the day (message displayed to players in the server list) | Can you see our **MOTD**? |
