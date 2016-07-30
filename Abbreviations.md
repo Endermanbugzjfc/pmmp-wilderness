@@ -34,7 +34,7 @@ Abbrevations or Terms
 | SSH | Secure socket shell | You can remotely connect to a computer using **SSH**. |
 | Sync | Synchronize | How to **sync** the SimpleAuth data between two servers? |
 | in Sync | Synchronous | All functions related to the PocketMine server instance should be run **in sync**. |
-| Sync | Synchronized | _Please refer to [Threaded::synchronized](//http://php.net/threaded.synchronized)_ |
+| Sync | Synchronized | _Please refer to [Threaded::synchronized](http://php.net/threaded.synchronized)_ |
 | TPS | Ticks per second (indicates how many times a second things are updating) | The lower your **TPS**, the slower your server will be. |
 | Trigo | Trigonometry/Trigonometric functions | This feature may involve some **trigo** trouble. |
 | VPN | Virtual private network | Are those players behind the same **VPN**? |
