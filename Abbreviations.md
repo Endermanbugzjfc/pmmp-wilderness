@@ -18,6 +18,7 @@ Abbrevations or Terms
 | FTP | File Transfer Protocol | Please download the file from the **FTP** server. |
 | FTP/FTxP | `FloatingTextParticle` | How do you spawn an **FTxP**? |
 | GC | Garbage collection (a form of automatic memory management) | Java takes care of **GC** on its own. |
+| ID | A (usually) unique identifer of any data types, including integers, strings or even objects | You can create a `new stdClass` as a unique **ID** and compare them using the `===` operator. |
 | IDE | Integrated development environment (application that helps developers write code) | Which **IDE** do you use? |
 | IM | ImagicalMine | **IM** was the first PocketMine derivative that threatened the community's survival. |
 | IP | Internet Protocol address | Do you know his **IP** address? |
@@ -25,6 +26,8 @@ Abbrevations or Terms
 | LAN | Local area network (the devices connected to your router) | If not port-forwarded, the server will only be visible on your **LAN**. |
 | MCPE/MPE | Minecraft: Pocket Edition | There's been so many updates for **MCPE** recently. |
 | MOTD | Message of the day (message displayed to players in the server list) | Can you see our **MOTD**? |
+| NPC | Non-player characters: An in-game character with a human-like AI | The **NPC** villager lives in an **NPC** village. |
+| NPC | A dummy human | The plugin _Slapper_ by @jojoe77777, which allows management of **NPC**s, probably got its name inspired by the _SlapIt_ plugin by @LegendOfMCPE, citation needed. |
 | OP | Operator (someone with special privileges on a Minecraft server) | May I have **OP**? |
 | OP | Original Post/Original poster | The **OP** didn't give sufficient information to solve the problem. |
 | Perm | Permission | They messed up the **perms** in the plugin. |
