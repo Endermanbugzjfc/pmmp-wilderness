@@ -34,7 +34,7 @@ Abbrevations or Terms
 | PHP | PHP: Hypertext Preprocessor (the language PocketMine is written in) | Why was this written in **PHP**? |
 | PM | PocketMine (project name), Private Messaging | Does she still write **PM** plugins? |
 | PR | Pull request (on GitHub) | Did he merge the **PR** yet? |
-| Pseudocode | Code that is not meant to be run | _Please refer to [[Example code or pseudocode|Code-Environment#example-codepseudocode]]
+| Pseudocode | Code that is not meant to be run | _Please refer to [[Code Environment: Example code/Pseudocode|Code-Environment#example-codepseudocode]]_ |
 | RCON | Remote console | Does that server have **RCON** enabled? |
 | SQL | Structured Query Language | Does their back-end use an **SQL** database? |
 | SSH | Secure socket shell | You can remotely connect to a computer using **SSH**. |
