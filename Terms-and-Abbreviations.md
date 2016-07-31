@@ -1,5 +1,6 @@
 Abbrevations or Terms
 ===
+> _Disclaimer: The examples below may be subjective or controversial. However, they only represent voices from different stakeholders. They are only examples, and leaving them alone here doesn't mean that such stances are our common sense. Please do not raise controversies or unnecessary edits about the examples because you don't agree with it._
 
 | Term | Meaning(s) | Example |
 | :---: | :----: | :----: |
