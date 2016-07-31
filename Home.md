@@ -1,9 +1,11 @@
-Welcome to the forums-common-sense wiki!
+Welcome!
+===
+Welcome to the forums-common-sense wiki! Please navigate using the sidebar.
 
-Please navigate using the sidebar.
+Everyone is welcome to edit. **Please star this repository and spread the word if you support this wiki.** [![GitHub stars](https://img.shields.io/github/stars/SOF3/forums-common-sense.svg?style=plastic)](https://github.com/SOF3/forums-common-sense/stargazers) [![Twitter](https://img.shields.io/twitter/url/https/github.com/SOF3/forums-common-sense.svg?style=social?style=plastic)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
 
-Everyone is welcome to edit. **Please star this repository if you support this wiki.**
-
+Controversy resolution
+===
 In case there are disputes, please cross out the controversial section using the \~\~ syntax (but do not delete it!), then create an issue and reference the issue after the controversial text.
 
 For example:
