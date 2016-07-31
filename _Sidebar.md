@@ -1,4 +1,4 @@
 * [[Home]]
-* [[Term Abbreviations|Abbreviations]]
+* [[Terms and Abbreviations|Terms-and-Abbreviations]]
 * [[Code Environment]]
 * [[Controversies]]
