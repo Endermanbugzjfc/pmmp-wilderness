@@ -42,3 +42,6 @@ A class may be referred to with its simple name (namespace removed). However, so
 * `Chest` is assumed to be `pocketmine\tile\Chest`
 * `TileChest` for `pocketmine\tile\Chest`
 * `ChestBlock` for `pocketmine\block\Chest`
+
+## Example code/Pseudocode
+_To be completed._
