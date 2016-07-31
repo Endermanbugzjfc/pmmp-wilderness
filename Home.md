@@ -2,7 +2,7 @@ Welcome to the forums-common-sense wiki!
 
 Please navigate using the sidebar.
 
-Everyone is welcome to edit.
+Everyone is welcome to edit. **Please star this repository if you support this wiki.**
 
 In case there are disputes, please cross out the controversial section using the \~\~ syntax (but do not delete it!), then create an issue and reference the issue after the controversial text.
 
