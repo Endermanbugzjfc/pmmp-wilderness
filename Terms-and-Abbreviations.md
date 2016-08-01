@@ -19,6 +19,9 @@ Abbrevations or Terms
 | FTP | File Transfer Protocol | Please download the file from the **FTP** server. |
 | FTP/FTxP | `FloatingTextParticle` | How do you spawn an **FTxP**? |
 | GC | Garbage collection (a form of automatic memory management) | Java takes care of **GC** on its own. |
+| Hack | Usage of mods to exploit servers | I need an anti-**hack** plugin. |
+| Hack | (Specification recommended) General act of programming to solve difficult problems | They entered the annual **Hack**athon. |
+| Hack | (Specification recommended) Attack on a computer system | Hack into your clients and install the authentication app on them! |
 | ID | A (usually) unique identifer of any data types, including integers, strings or even objects | You can create a `new stdClass` as a unique **ID** and compare them using the `===` operator. |
 | IDE | Integrated development environment (application that helps developers write code) | Which **IDE** do you use? |
 | IM | ImagicalMine | **IM** was the first PocketMine derivative that threatened the community's survival. |
