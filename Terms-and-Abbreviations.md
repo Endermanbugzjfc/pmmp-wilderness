@@ -30,6 +30,7 @@ Abbrevations or Terms
 | LAN | Local area network (the devices connected to your router) | If not port-forwarded, the server will only be visible on your **LAN**. |
 | MCPE/MPE | Minecraft: Pocket Edition | There's been so many updates for **MCPE** recently. |
 | MOTD | Message of the day (message displayed to players in the server list) | Can you see our **MOTD**? |
+| NBT | Named Binary Tag, a data serialization standard used by Minecraft; also a library class in PocketMine | The **NBT** file is corrupted. Probably some bugs with the **NBT** class in PocketMine. |
 | NPC | Non-player characters: An in-game character with a human-like AI | The **NPC** villager lives in an **NPC** village. |
 | NPC | A dummy human | The plugin _Slapper_ by @jojoe77777, which allows management of **NPC**s, probably got its name inspired by the _SlapIt_ plugin by @LegendOfMCPE, citation needed. |
 | OP | Operator (someone with special privileges on a Minecraft server) | May I have **OP**? |
