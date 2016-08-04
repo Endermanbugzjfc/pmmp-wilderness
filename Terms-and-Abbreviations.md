@@ -2,6 +2,14 @@ Abbrevations or Terms
 ===
 > _Disclaimer: The examples below may be subjective or controversial. However, they only represent voices from different stakeholders. They are only examples, and leaving them alone here doesn't mean that such stances are our common sense. Please do not raise controversies or unnecessary edits about the examples because you don't agree with it._
 
+# Non-recognized Terms
+> Knowing about non-common sense is much more important than having common sense. This section is much more important than the section about recognized terms. Avoid using these terms or phrases, or add sufficient elaboration on them.
+
+| Term | Problem |
+| :---: | :---: |
+| Not working | There are myriad ways of "not working". Is it a crash? Any error messages? Simply did nothing? What did you expect it to do? What is the outcome now? Give information please. Simply saying "not working" doesn't explain anything. |
+
+# Recognized Terms
 | Term | Meaning(s) | Example |
 | :---: | :----: | :----: |
 | AI | Artificial intelligence (for living non-player entities) | There's still a problem with the villager **AI**. They don't know how to locate doors. |
