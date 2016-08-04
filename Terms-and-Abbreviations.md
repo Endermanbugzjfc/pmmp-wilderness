@@ -41,7 +41,7 @@ Abbrevations or Terms
 | MOTD | Message of the day (message displayed to players in the server list) | Can you see our **MOTD**? |
 | NBT | Named Binary Tag, a data serialization standard used by Minecraft; also a library class in PocketMine | The **NBT** file is corrupted. Probably some bugs with the **NBT** class in PocketMine. |
 | NPC | Non-player characters: An in-game character with a human-like AI | The **NPC** villager lives in an **NPC** village. |
-| NPC | A dummy human | The plugin _Slapper_ by @jojoe77777, which allows management of **NPC**s, was named after the _SlapIt_ plugin by @LegendOfMCPE. |
+| NPC | A dummy human | The plugin [_Slapper_](https://github.com/PMPlugins/Slapper) by [@jojoe77777](https://github.com/jojoe77777), which allows management of **NPC**s, was named after the [_SlapIt_](https://github.com/LegendOfMCPE/SlapIt) plugin by [@LegendOfMCPE](https://github.com/LegendOfMCPE). |
 | OP | Operator (someone with special privileges on a Minecraft server) | May I have **OP**? |
 | OP | Original Post/Original poster | The **OP** didn't give sufficient information to solve the problem. |
 | Perm | Permission | They messed up the **perms** in the plugin. |
