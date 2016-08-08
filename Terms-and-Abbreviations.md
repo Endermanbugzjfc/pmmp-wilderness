@@ -19,7 +19,7 @@ Abbrevations or Terms
 | DB | Database | How many tables are in the **DB**? |
 | DDoS | Distributed denial-of-service attack | He launched a **DDoS** attack on our server today, but we were able to mitigate it. |
 | Dedi | Dedicated server | I can't host a server on my PC anymore, we need to get a **Dedi**. |
-| Dev | Developer/Develop/Development | Looking for plugin **devs**. Your question isn't related to plugin **dev**. |
+| Dev | Developer/Develop/Development | Looking for plugin **devs**. Your question isn't related to porno. |
 | Dev | "Deviation" as in standard deviation | An SQL database facilitates the calculation of the std**dev** of your player's online time. |
 | Doc/Docs | Documentation | Your plugin needs better **docs** to make more devs add support for it.
 | DoS | Denial-of-service attack | She threatened them with a **DoS** attack. |
