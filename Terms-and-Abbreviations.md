@@ -21,7 +21,7 @@ Abbrevations or Terms
 | Dedi | Dedicated server | I can't host a server on my PC anymore, we need to get a **Dedi**. |
 | Dev | Developer/Develop/Development | Looking for plugin **devs**. Your question isn't related to a plugin **dev**. |
 | Dev | "Deviation" as in standard deviation | An SQL database facilitates the calculation of the std**dev** of your player's online time. |
-| Doc/Docs | Documentation | Your plugin needs better **docs** to enable more devs add support for it.
+| Doc/Docs | Documentation | Your plugin needs better **docs** to enable more devs to add support for it.
 | DoS | Denial-of-service attack | She threatened them with a **DoS** attack. |
 | Dup | Duplication | This thread is a **dup**. Please google it. |
 | FPS | Frames per second | 60 **FPS** is optimal for PC games. |
