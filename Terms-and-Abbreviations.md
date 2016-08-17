@@ -21,7 +21,7 @@ Abbrevations or Terms
 | Dedi | Dedicated server | I can't host a server on my PC anymore, we need to get a **Dedi**. |
 | Dev | Developer/Develop/Development | Looking for plugin **devs**. Your question isn't related to a plugin **dev**. |
 | Dev | "Deviation" as in standard deviation | An SQL database facilitates the calculation of the std**dev** of your player's online time. |
-| Doc/Docs | Documentation | Your plugin needs better **docs** to make more devs add support for it.
+| Doc/Docs | Documentation | Your plugin needs better **docs** to enable more devs add support for it.
 | DoS | Denial-of-service attack | She threatened them with a **DoS** attack. |
 | Dup | Duplication | This thread is a **dup**. Please google it. |
 | FPS | Frames per second | 60 **FPS** is optimal for PC games. |
@@ -31,7 +31,7 @@ Abbrevations or Terms
 | Hack | Usage of mods to exploit servers | I need an anti-**hack** plugin. |
 | Hack | (Specification recommended) General act of programming to solve difficult problems | They entered the annual **Hack**athon. |
 | Hack | (Specification recommended) Attack on a computer system | Hack into your clients and install the authentication app on them! |
-| ID | A (usually) unique identifer of any data types, including integers, strings or even objects | You can create a `new stdClass` as a unique **ID** and compare them using the `===` operator. |
+| ID | A (usually) unique identifier of any data types, including integers, strings or even objects | You can create a `new stdClass` as a unique **ID** and compare them using the `===` operator. |
 | IDE | Integrated development environment (application that helps developers write code) | Which **IDE** do you use? |
 | IM | ImagicalMine | **IM** was the first PocketMine derivative that threatened the community's survival. |
 | IP | Internet Protocol address | Do you know his **IP** address? |
