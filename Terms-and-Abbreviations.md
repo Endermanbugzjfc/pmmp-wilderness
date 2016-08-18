@@ -10,7 +10,7 @@ Abbrevations or Terms
 | Not working | There are myriad ways of "not working". Is it a crash? Any error messages? Simply did nothing? What did you expect it to do? What is the outcome now? Give information please. Simply saying "not working" doesn't explain anything. |
 
 # Recognized Terms
-| Term | Meaning(s) | Example |
+| Term | Meaning(s) | Example/Note/Reference |
 | :---: | :----: | :----: |
 | AI | Artificial intelligence (for living non-player entities) | There's still a problem with the villager **AI**. They don't know how to locate doors. |
 | API | Application programming interface | They finally made a documentation for their **API**. |
@@ -24,6 +24,8 @@ Abbrevations or Terms
 | Doc/Docs | Documentation | Your plugin needs better **docs** to enable more devs to add support for it.
 | DoS | Denial-of-service attack | She threatened them with a **DoS** attack. |
 | Dup | Duplication | This thread is a **dup**. Please google it. |
+| Fork | A GitHub fork | _Please refer to [GitHub user documentation -- Fork a repo](https://help.github.com/articles/fork-a-repo/)_ |
+| Fork | A PocketMine derivative | Although @Intyre kept emphasizing that these PocketMine derivatives aren't really GitHub forks, the term "PocketMine forks" is already too commonly used like a cancer in the community, like the HTTP "Referer" header. |
 | FPS | Frames per second | 60 **FPS** is optimal for PC games. |
 | FTP | File Transfer Protocol | Please download the file from the **FTP** server. |
 | FTP/FTxP | `FloatingTextParticle` | How do you spawn an **FTxP**? |
