@@ -1,0 +1,146 @@
+This page aims to talk about questions frequently asked on the Plugin Development forum. The content is mainly summarized from high-quality posts on the forums, and linked as references if copied.
+
+# PHP
+## Syntax error
+These are pure PHP problems. See [this StackOverflow page](http://stackoverflow.com/q/18050071/3990767) &mdash; it is very detailed.
+## ClassNotFoundException: Class `a class in your plugin` not found
+Check if your class files are placed and written according to PSR-0 ([check here](https://sof3.github.io/psr.htm)).
+
+# Command API
+[This method](https://gist.github.com/a540360b7323f7cc656f) from @shoghicp was recommended **years ago**. Not sure if it still works. Any good links?
+
+# Event API
+## \*\*\*Event does not have a handler list
+You registered an event handler for an event that does not have a handler list. To fix this issue, find the parent class of the event that has a handler list, and handle that event class instead. Use `instanceof` in your event handler to filter events.
+
+Take `EntityDamageByChildEntityEvent` as an example. Look at the [class file](https://github.com/pmmp/PocketMine-MP/blob/80292c6c7a542706a85c4f756e3d93bee1a07ca2/src/pocketmine/event/entity/EntityDamageByChildEntityEvent.php) &mdash; there is no `public static $handlerList;`, so you cannot make event handlers for it. Instead, look at the [class declaration](https://github.com/pmmp/PocketMine-MP/blob/80292c6c7a542706a85c4f756e3d93bee1a07ca2/src/pocketmine/event/entity/EntityDamageByChildEntityEvent.php#L29) to find out its superclass (`EntityDamageByEntityEvent`), and then [the superclass of the superclass](https://github.com/pmmp/PocketMine-MP/blob/80292c6c7a542706a85c4f756e3d93bee1a07ca2/src/pocketmine/event/entity/EntityDamageByEntityEvent.php#L30), vice versa, until you find a superclass [with the line `public static $handlerList = null;`](https://github.com/pmmp/PocketMine-MP/blob/80292c6c7a542706a85c4f756e3d93bee1a07ca2/src/pocketmine/event/entity/EntityDamageEvent.php#L32). Make your event handler handle this event class, and check if you are receiving `EntityDamageByChildEntityEvent` in the handler:
+
+```php
+public function handleDamage(EntityDamageEvent $event){
+    if($event instanceof EntityDamageByChildEntityEvent){
+        // handle $event here
+    }
+}
+```
+
+# Scheduler API and threading
+## How to cancel a task?
+Use the [`ServerScheduler::cancelTask()`](https://github.com/pmmp/PocketMine-MP/blob/80292c6c7a542706a85c4f756e3d93bee1a07ca2/src/pocketmine/scheduler/ServerScheduler.php#L223) method. Do **not** use `Task::cancel()` &mdash; it only triggers internal callbacks of the task, but does not remove it from the scheduler.
+
+Regarding the task ID, which is required when using `ServerScheduler::cancelTask()`. This can be obtained by `Task::getTaskId()`. If you cancel the task from itself, you can use `$serverScheduler->cancelTask($this->getTaskId())`. Otherwise, you have to retain a reference to the Task instance, or retrieve the task ID when scheduling the task. <sup>[_ref_](https://forums.pmmp.io/threads/creating-a-timer-with-tasks.136/)</sup>
+
+For example:
+```php
+class MyTask extends PluginTask{
+    public function onRun($ticks){
+        if(needToCancelTask()){
+            $this->getOwner()->getServer()->getScheduler()->cancelTask($this->getTaskId());
+        }
+    }
+}
+```
+
+Or, store the task ID when scheduling the task:
+```php
+$this->id = $server->getScheduler()->scheduleRepeatingTask($myTask)->getTaskId();
+// some time later...
+$server->getScheduler()->cancelTask($this->id);
+```
+
+## How to cancel an event a few seconds later?
+You don't do it with an event. You do it by comparing the system time.
+
+This post is not yet cleaned up:
+
+> ~~Timer~~ Scheduler & Tasks are for doing an action after a period of time, not having a state within a period of time. (The player will be unfrozen 10 seconds later vs The player cannot move for 10 seconds)
+
+> What is the difference? For the former, "be unfrozen" is the action, while for the latter, "be immobile" is the state.
+
+> How is a state different from an action? For an action, you do something actively. For example, "kill the player" is an action, but "the player is dead" is a state, a description, a condition.
+
+> In programming, the things you put in a function are always actions. You change a value, you call a function, you stop the code from executing. How does a condition affect execution? A condition is queried upon when something is executing, and it does not actively executes. Your condition is "cannot move". What executions will query this condition? Of course, you only need to know whether the player can move when the player tries to move. This is, as you said, cancel an event. You handle a PlayerMoveEvent and cancel it if the condition applies.
+
+> To be most convenient, you can change a value to make a player frozen/unfrozen, but this does not exist in PocketMine (there is Player->blocked, but it has side effects and it isn't very reliable). Therefore, you have to make PocketMine ask you whether the player can move every time the player tries to move. How do you yourself know whether the player can move? You ask yourself whether it is within the 10 seconds you asked for.
+
+> But the time that code executes changes - how do you know if it is that relative 10 seconds? Therefore, we make the relative time absolute. For example, if I tell you that I typed this sentence in the past minute, you don't know when I typed this sentence. So how do you find it out? You look at the time this post is posted, and minus one miniute, to know what I meant by "in the past minute". Without the post timestamp from the forums? I have to tell you the exact (absolute) date and time, that is, 2016-11-16 17:38:05 UTC+8.
+
+> Same goes to your code. You write down that "It is now 2016-11-16 17:38:05 UTC+8, and for the next 10 seconds the player can't move". Since time only goes forwards, I can make it even more straightforward: "The player can't move before 2016-11-16 17:38:15 UTC+8".
+
+> An absolute time can be retrieved using the time() or microtime() function. So, you only store the timestamp for the "unfreeze" time, then in the PlayerMoveEvent handler, you check if the current time is less than the "unfreeze" time. You don't need to check if it is less than the "freeze" time, because time only goes forwards.
+
+> You don't need to use scheduler tasks at all.
+
+<sup>[_ref_](https://forums.pmmp.io/threads/learning-timer-or-task.57/)</sup>
+
+## What is different between `scheduleDelayedTask`, `scheduleRepeatingTask`, `scheduleDelayedRepeatingTask` and `scheduleAsyncTask`?
+Do not mix them up. There is something called `Task`, where `PluginTask` is a type of `Task; and there is something called `AsyncTask`, which is entirely irrelevant with `Task`.
+
+A `Task` can be scheduled to run after some time, which is `scheduleDelayedTask`; or to run repeatedly at given intervals, starting immediately, which is `scheduleRepeatingTask`; or to start running repeatedly after some time, which is `scheduleDelayedRepeatingTask`. The code in `Task` is executed on the main thread.
+
+## What is threading? Does it make the server faster?
+Threading is like executing code in another machine. Executing code in threads generally won't slow down the server unless you try to mine bitcoins. Each thread executes differently. We call the thread that the server does most of the work the "main thread". If the "main thread" is blocked (stops executing because it has to do something busy), it cannot respond to players, so it looks like the server hangs, or if it is only blocked for short periods, the server is laggy (decrease in TPS). **In simple words, threading is executing in background.**
+
+An `AsyncTask` is executed in other threads, but an `AsyncTask` is not an independent thread. PocketMine internally has some threads called `AsyncWorker`. Each `AsyncWorker` is an independent thread, which you can think as another CPU. When you `scheduleAsyncTask`, PocketMine adds your new `AsyncTask` to a queue of AsyncTasks called the `AsyncPool`. An `AsyncWorker` will take the oldest `AsyncTask` from the `AsyncPool` and execute it, and then takes and execute the next one from the `AsyncPool`. (Imagine there are a few water pipes removing water from a water pool &mdash; the water at the bottom gets removed first) They are still executed on the same machine, possibly on another core (system-dependent, I guess). Using an AsyncTask will not give you infinite CPU, but may facilitate better utilization of all the CPU available.
+
+You should only use `AsyncTask` to run one-time operations (e.g. usually takes less than 15 seconds to execute). If you are using it to run repeating stuff, such as starting another server (e.g. an HTTP server like Volt or an IRC client like the IRCClient plugin), start a thread instead. Otherwise, you will keep one of the workers busy (the water pipe is stuck), and the server will get one less AsyncWorker available. <sup>[_ref_](http://forums.pocketmine.net/threads/how-asynctask-reduces-lag.14056/#post-138729)</sup>
+
+### AsyncTask: An analogy of a restaurant
+In this analogy, a customer = a player, the waiter = main thread, food = some data from the Internet that takes a long time to download, the cook = the code that downloads data
+
+1. A customer enters a restaurant and orders some food.
+  * A player logins and asks the server to download some data from the Internet.
+2. The waiter takes the order.
+  * The server receives the command to download data.
+3. The waiter writes a note to the cook to prepare the food.
+  * The server starts an AsyncTask to download the data. While downloading data, the thread can't do anything else.
+4. The waiter continues to serve other customers.
+  * The server still serves the players, keeping them online, maintaining game mechanics, keep the server ticking, etc.
+5. If the waiter does not ask the cook to prepare the food, but does the cooking himself, (assuming there is only one waiter) the customers will be left unattended, and they will be angry and leave the restaurant.
+  * If the server downloads data on the main thread instead of in an AsyncTask, the players cannot see any response from the server to what they do, and may eventually timeout.
+6. The waiter occasionally looks if the cook has finished preparing the food. (Looking at the table does not really stop him from serving customers, because it's just a glimpse and takes very little time)
+  * The server checks if an AsyncTask is completed every tick.
+7. The restaurant has a partition between the kitchen and the dining area, so the waiter and the cook cannot really talk directly.
+  * Threads in PHP cannot communicate easily. They are often based on message stacks that may only be queried in long intervals.
+8. The cook wants to say "the beef is ready, now preparing the noodles". He writes it on a note, and the waiter reads the note to the customer.
+  * The AsyncTask announces that "50% downloaded" (using `AsyncTask::publishProgress`). The main thread checks for the progress every tick, and accordingly sends them to the player.
+  * The main thread code is implemented in `AsyncTask::onProgressUpdate`, but they are actually run on the main thread.
+9. If the food is ready, it is served to the player.
+  * If the AsyncTask has a result, i.e. the data are downloaded, the data will be processed and the server accordingly reacts to the player.
+  * The main thread code is implemented in `AsyncTask::onCompletion`, but they are actually run on the main thread.
+
+<sup>_ref_: an ancient post from @PEMapModder that can no longer be found. @SOF3 recited it.</sup>
+
+## What can be done in AsyncTasks?
+**You can't call API methods on a separate thread. This is the undeniable fact; this is by definition of "API methods of PocketMine" and "threads".** The main body (`onRun`) of an AsyncTask is run entirely on a worker thread, and it is **incorrect, if not impossible** to call API methods from `AsyncTask::onRun()`. In addition to system limitations, most API operations you want to run in background actually have a bottleneck in network I/O with players, which cannot be prevented by threading anyway.
+
+You may _request a delayed call_ of API methods _on the main thread_ from an AsyncTask using `publishProgress()` + `onProgressUpdate()`, or using `onCompletion()`, but **you still cannot call API methods on other threads**, but just on the main thread. You can **pass scalar/serializable data** between threads, and you can _request something to be done upon an object on the main thread_ through a complicated series of scheduling, but you **cannot** do them **directly on other threads**. You may _break down objects and reconstruct them_ in another thread, but **they will not be the same object**, i.e. if you somehow pass the Player object to an AsyncTask (which is actually impossible because it has a Server reference), **it will be a clone**, and _API methods won't work as they usually do_.
+
+In other threads you may, however, call _static API methods_, such as `Utils::getURL()`, or even construct classes in the PocketMine API; but this is very dangerous, because if you aren't 100% sure what you are doing, you will end up trying to modify some data ineffectively without errors. _PHP builtin functions are not API methods_, but they are **safe to use as long as they don't reference any storage in the main thread**. For example, [`fopen`](https://php.net/fopen) returns a resource, which is actually an integer pointing to a handle stored in the PHP process; this resource ID will mean something probably entirely different if passed to another thread. You can still use resources in other threads, but make sure you don't try to reference resources in the main thread.
+
+Therefore, **trying to call an API method on other threads will fail silently**. It is not possible, because you aren't calling API methods from _the_ server at all; you are calling them probably on a clone of the server, or a clone of other objects, etc., which **does not affect anything on the main thread**. <sup>[_ref_](https://forums.pmmp.io/threads/creating-async-task-and-call-methods-from-api.1000/#post-12255)</sup>
+
+There are two typical uses:
+
+### CPU-consuming code
+* No, this is not how you call setBlock() in a large loop in world edit. Remember that you cannot execute PocketMine core API stuff in AsyncTask or any other threads. (to be explained below)
+* One example is when you want to, say, delete a very big directory (e.g. the .git/ directory of a Git repo with many commits and branches like PocketMine, or the world folder of a map with many generated chunks). That is not related to PocketMine core, but it is time-consuming to run ("lagging the server") (I would consider anything taking more than half a tick, i.e. 25 ms "lagging the server"). You wouldn't expect it to take too much time (like a whole hour) to run, and you may execute it quite frequently.
+* For example, you may be copying/deleting a SkyWars map 5 times every 10 minutes). This is when you want to use AsycnTask. AsyncTask wouldn't magically use less CPU. But it executes in another thread, which is like in another process (or is it really in a subprocess/another process? I'm not sure about how pthreads works internally).
+So instead of spending the server's core tick time to do stuff that you don't need to get done on the pulse, do it in another thread.
+* E.g. you can teleport the player to that world after the copying AsyncTask has completed; you don't need to do that immediately, and maybe your copying task spends 100 milliseconds to run, the player doesn't notice it but your server will lag behind for 2 ticks if you had not used an AsyncTask).
+
+### Waiting-blocking
+* No, I didn't say waiting for a player to do something. You can simply use the event API or the scheduler API to do that instead of suspending an async worker.
+* This refers to thread-blocking function calls, such as curl_exec() (hence `Utils::getURL()` and `Utils::postURL()`). HTTP requests (cURL execution) would lag your server, because it spends most of the time waiting for a response from another server.
+* Another example is MySQL queries. You aren't doing anything constructive in the majority time of a query function call. You are simply waiting for MySQL server to read your query, execute it and return a result.
+* Why spend all the main thread performance on waiting for a response?
+* It would of course be most convenient if you can set your queries/requests to be non-blocking and use a scheduler task to synchronously check if the server has respond. But in cases where you can't, we are simply putting the query aside and get a worker (another thread) stuck instead of getting the main thread stuck. Do you want the waiters look sick or the cooks to look sick, when your clients can see your waiters but not your cooks?
+* It doesn't save CPU. It just redistributes the CPU use.
+
+<sup>[_ref_](http://forums.pocketmine.net/threads/how-asynctask-reduces-lag.14056/#post-138729)</sup>
+
+***
+### Legacy
+| symbol | meaning |
+| :----: | :-----: |
+| _ref_ | Content is copied from the linked forum thread |
+| _src_ | Content is based on evidence from source code |
