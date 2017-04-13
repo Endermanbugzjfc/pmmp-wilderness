@@ -1,5 +1,7 @@
 This page aims to talk about questions frequently asked on the Plugin Development forum. The content is mainly summarized from high-quality posts on the forums, and linked as references if copied.
 
+Visit this page with a bitlink: https://bit.ly/PmDev
+
 # PHP
 ## Syntax error
 These are pure PHP problems. See [this StackOverflow page](http://stackoverflow.com/q/18050071/3990767) &mdash; it is very detailed.
