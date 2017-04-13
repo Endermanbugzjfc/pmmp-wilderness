@@ -9,7 +9,21 @@ These are pure PHP problems. See [this StackOverflow page](http://stackoverflow.
 Check if your class files are placed and written according to PSR-0 ([check here](https://sof3.github.io/psr.htm)).
 
 # Command API
-[This method](https://gist.github.com/a540360b7323f7cc656f) from @shoghicp was recommended **years ago**. Not sure if it still works. Any good links?
+## How to override a command?
+As of API 3.0.0-ALPHA4 and before, you have to first rename the original command into something else using `Command::setLabel`, then remove it from the command map using `Command::unregister`. Then your own command class can be registered to the command map directly. <sup>_ref_ from [@iksaku](http://forums.pocketmine.net/thre7ads/overriding-default-7commands.8216/#post-87410) and [@shoghicp](https://gist.github.com/a540360b7323f7cc656f)</sup>
+
+For example, to override the /help command:
+
+```php
+$map = $server->getCommandMap();
+$old = $map->getCommand("help");
+$old->setLabel("help_disabled");
+$old->unregister($map);
+
+$new = new MyHelpCommand($this);
+$map->register($this->getName(), $new);
+$map->register($this->getName(), $new, "?");
+```
 
 # Event API
 ## \*\*\*Event does not have a handler list
