@@ -1,7 +1,7 @@
 * [[FAQ|PocketMine Plugin Development FAQ]]
   * [[PHP|PocketMine Plugin Development FAQ#PHP]]
     * [🌐 Syntax errors](http://stackoverflow.com/q/18050071/3990767)
-    * [[ClassNotFoundException: Class `a class in your plugin` not found|PocketMine Plugin Development FAQ#classnotfoundexception: class a class in your plugin not found]]
+    * [[ClassNotFoundException: Class `a class in your plugin` not found|PocketMine Plugin Development FAQ#classnotfoundexception class a class in your plugin not found]]
   * [[Command API|PocketMine Plugin Development FAQ#command api]]
     * [[Command overriding|PocketMine Plugin Development FAQ#how to override a command]]
   * [[Event API|PocketMine Plugin Development FAQ#event api]]
