@@ -156,7 +156,7 @@ So instead of spending the server's core tick time to do stuff that you don't ne
 
 # Data saving
 ## YAML vs SQL
-JSON is a subset of YAML. Any valid JSON data can be parsed as YAML. So unless you want to store the data in a compact way (which is pointless for small files, since [the size of each file is always multiples of 4 KB](https://unix.stackexchange.com/q/62049/161897)), YAML seems to be a better option.
+JSON is a subset of YAML. Any valid JSON data can be parsed as YAML. So unless you want to store the data in a compact way (which is pointless for small files, since [the size of each file is always multiples of 4 KB](https://unix.stackexchange.com/q/62049/161897)), YAML seems to always be a better option compared to JSON, unless your data will be parsed by a program that only knows JSON but not YAML. (After all, JSON has a long history but YAML is kind of new, but most languages already have YAML libraries)
 
 If you have may data for many small units, e.g. a few numbers per player, you won't want to store all the data in the same YAML file, because it's slow. You have to load all the data into memory whenever you do I/O, which may cause memory failure.
 
