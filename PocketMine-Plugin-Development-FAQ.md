@@ -154,6 +154,25 @@ So instead of spending the server's core tick time to do stuff that you don't ne
 
 <sup>[_ref_](http://forums.pocketmine.net/threads/how-asynctask-reduces-lag.14056/#post-138729)</sup>
 
+# Data saving
+## YAML vs SQL
+### YAML / JSON
+JSON is a subset of YAML. Any valid JSON data can be parsed as YAML. So unless you want to store the data in a compact way (which is pointless for small files, since [the size of each file is always multiples of 4 KB](https://unix.stackexchange.com/q/62049/161897)), YAML seems to be a better option.
+
+If you have may data for many small units, e.g. a few numbers per player, you won't want to store all the data in the same YAML file, because it's slow. You have to load all the data into memory whenever you do I/O, which may cause memory failure.
+
+Therefore, to save data for each player, each account should have its own file. However, it creates a large number of files, which many users may dislike. Also, it is inconvenient to evaluate statistics based on all data, e.g. mean, sum, maximum, etc. To do so with YAML, you have to either:
+
+* Load the data of all units every time. But if you have 100000 players registered, you are in trouble. You have to open a file stream for each unit, read the contents, store them in a list, and close stream. This will lead to very poor performance, especially on personal computers, whose harddisks don't expect you to read so many files at a time. Therefore, this is not a good idea.
+* Store the values. If you want a sum, store the sum somewhere and update it every time a datum is added/removed/updated. If you want an average or standard deviation, store the count too and also update it every time data are changed. If you want top 10, a bit trouble. If you want the median, basically you must recalculate all the data every time, unless you otherwise have an index of all numbers somewhere, which isn't per-player storage anymore. <sup>[_ref_](http://forums.pocketmine.net/threads/yaml-vs-sql.15091/#post-147453)</sup>
+
+Oh the other hand, SQL has these advantages:
+
+* All the data are stored in the same file, but the data are accessed using [`fseek`](https://php.net/fseek), which prevents loading unnecessary data. SQL is optimized for various queries, and data are indexed upon request, so it is more efficient.
+* Most SQL implementations (e.g. MySQL) have good concurrency support, so multiple servers can access data together without conflict, if you know how to use it. Nevertheless, user-side setup might be slightly inconvenient.
+
+Of course, the best solution is to let the users pick what database to use and bear their own consequences! See [SimpleAuth](https://github.com/PocketMine/SimpleAuth) for how to support switching between multiple database types.
+
 ***
 ### Legacy
 | symbol | meaning |
