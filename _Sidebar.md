@@ -1,5 +1,5 @@
 * [[FAQ|PocketMine Plugin Development FAQ]]
-  * [[PHP|PocketMine Plugin Development FAQ#PHP]]
+  * [[PHP|PocketMine Plugin Development FAQ#php]]
     * [🌐 Syntax errors](http://stackoverflow.com/q/18050071/3990767)
     * [[ClassNotFoundException: Class `a class in your plugin` not found|PocketMine Plugin Development FAQ#classnotfoundexception class a class in your plugin not found]]
   * [[Command API|PocketMine Plugin Development FAQ#command api]]
@@ -12,3 +12,5 @@
     * [[What is threading? Does it make the server faster?|PocketMine Plugin Development FAQ#what is threading does it make the server faster]]
     * [[AsyncTask: An analogy of a restaurant|PocketMine Plugin Development FAQ#asynctask: an analogy of a restaurant]]
     * [[What can be done in AsyncTasks|PocketMine Plugin Development FAQ#what can be done in asynctasks]]
+  * [[Data Saving|PocketMine Plugin Development FAQ#data saving]]
+    * [[YAML vs SQL|PocketMine Plugin Development FAQ#yaml vs sql]]
