@@ -25,7 +25,7 @@ $map->register($this->getName(), $new);
 $map->register($this->getName(), $new, "?");
 ```
 
-## Custom command usage/autocompletion
+## Custom command usage / autocompletion
 In API 2.0.0 to API 3.0.0-ALPHA4, you have to do this for automatic command completion:
 The actual command completion part can be done using the "enum_values" option.
 
