@@ -26,7 +26,8 @@ $map->register($this->getName(), $new, "?");
 ```
 
 ## Custom command usage/autocompletion
-In API 2.0.0 to API 3.0.0-ALPHA4, you have to do this:
+In API 2.0.0 to API 3.0.0-ALPHA4, you have to do this for automatic command completion:
+The actual command completion part can be done using the "enum_values" option.
 
 ```php
 // Class that extends pocketmine\command\Command
@@ -35,9 +36,10 @@ public function generateCustomCommandData(Player $player) {
    $commandData = parent::generateCustomCommandData($player);
    $commandData["overloads"]["default"]["input"]["parameters"] = [
       0 => [
-         "type" => "string",
+         "type" => "stringenum",
          "name" => "parameter",
-         "optional" => false
+         "optional" => false,
+         "enum_values" => ["parameter1", "parameter2"]
       ],
       1 => [
          "type" => "rawtext",
@@ -54,8 +56,7 @@ public function generateCustomCommandData(Player $player) {
    return $commandData;
 }
 ```
-
-To show available subcommands and parameters to use above the typing bar, i.e. the actual autocompletion part, refer to the data model sent in vanilla: https://gist.github.com/NiclasOlofsson/db712fd9e3c9cb0777cd9381cb48915a <sup>[_ref_](https://forums.pmmp.io/threads/available-subcommand-parameters-above-command.1841/)</sup>
+For more information, refer to https://gist.github.com/NiclasOlofsson/db712fd9e3c9cb0777cd9381cb48915a <sup>[_ref_](https://forums.pmmp.io/threads/available-subcommand-parameters-above-command.1841/)</sup>
 
 # Event API
 ## \*\*\*Event does not have a handler list
