@@ -25,6 +25,38 @@ $map->register($this->getName(), $new);
 $map->register($this->getName(), $new, "?");
 ```
 
+## Custom command usage/autocompletion
+In API 2.0.0 to API 3.0.0-ALPHA4, you have to do this:
+
+```php
+// Class that extends pocketmine\command\Command
+
+public function generateCustomCommandData(Player $player) {
+   $commandData = parent::generateCustomCommandData($player);
+   $commandData["overloads"]["default"]["input"]["parameters"] = [
+      0 => [
+         "type" => "string",
+         "name" => "parameter",
+         "optional" => false
+      ],
+      1 => [
+         "type" => "rawtext",
+         "name" => "value",
+         "optional" => true
+      ],
+      2 => [
+         "type" => "string",
+         "name" => "name",
+         "optional" => true
+      ]
+   ];
+
+   return $commandData;
+}
+```
+
+To show available subcommands and parameters to use above the typing bar, i.e. the actual autocompletion part, refer to the data model sent in vanilla: https://gist.github.com/NiclasOlofsson/db712fd9e3c9cb0777cd9381cb48915a <sup>[_ref_](https://forums.pmmp.io/threads/available-subcommand-parameters-above-command.1841/)</sup>
+
 # Event API
 ## \*\*\*Event does not have a handler list
 You registered an event handler for an event that does not have a handler list. To fix this issue, find the parent class of the event that has a handler list, and handle that event class instead. Use `instanceof` in your event handler to filter events.
