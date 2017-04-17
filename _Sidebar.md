@@ -4,6 +4,7 @@
     * [[ClassNotFoundException: Class `a class in your plugin` not found|PocketMine Plugin Development FAQ#classnotfoundexception class a class in your plugin not found]]
   * [[Command API|PocketMine Plugin Development FAQ#command api]]
     * [[Command overriding|PocketMine Plugin Development FAQ#how to override a command]]
+    * [[Custom command usage / autocompletion|PocketMine Plugin Development FAQ#custom-command-usage--autocompletion]]
   * [[Event API|PocketMine Plugin Development FAQ#event api]]
     * [[\*\*\*Event does not have a handler list|PocketMine Plugin Development FAQ#event does not have a handler list]]
   * [[Scheduler API & Threading|PocketMine Plugin Development FAQ#scheduler api and threading]]
