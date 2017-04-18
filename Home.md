@@ -1,6 +1,6 @@
 Welcome!
 ===
-This wiki was originally used to meaninglessly document some terms or consensus on the forums, but it is now used to feature and summarize high-quality posts into a single documentation. See [[FAQ|PocketMine Plugin Development FAQ]].
+This wiki was originally used to meaninglessly document some terms or consensus on the forums, but it is now used to feature and summarize high-quality forum posts into a single documentation. See [[FAQ|PocketMine Plugin Development FAQ]].
 <!--
 Below preserves the old version.
 
