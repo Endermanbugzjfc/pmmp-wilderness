@@ -6,7 +6,7 @@
     * [[Command overriding|PocketMine Plugin Development FAQ#how to override a command]]
     * [[Custom command usage / autocompletion|PocketMine Plugin Development FAQ#custom-command-usage--autocompletion]]
   * [[Event API|PocketMine Plugin Development FAQ#event api]]
-    * [[\*\*\*Event does not have a handler list|PocketMine Plugin Development FAQ#event does not have a handler list]]
+    * [[***Event does not have a handler list|PocketMine Plugin Development FAQ#event does not have a handler list]]
   * [[Scheduler API & Threading|PocketMine Plugin Development FAQ#scheduler api and threading]]
     * [[Cancelling tasks|PocketMine Plugin Development FAQ#how to cancel a task]]
     * [[Difference between `schedule***Task`|PocketMine Plugin Development FAQ#what is different between scheduledelayedtask, schedulerepeatingtask, scheduledelayedrepeatingtask and scheduleasynctask]]
