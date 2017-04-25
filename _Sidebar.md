@@ -11,7 +11,7 @@
     * [[Cancelling tasks|PocketMine Plugin Development FAQ#how to cancel a task]]
     * [[Difference between `schedule***Task`|PocketMine Plugin Development FAQ#what is different between scheduledelayedtask, schedulerepeatingtask, scheduledelayedrepeatingtask and scheduleasynctask]]
     * [[What is threading? Does it make the server faster?|PocketMine Plugin Development FAQ#what is threading does it make the server faster]]
-    * [[AsyncTask: An analogy of a restaurant|PocketMine Plugin Development FAQ#asynctask: an analogy of a restaurant]]
+    * [[AsyncTask: An analogy of a restaurant|PocketMine Plugin Development FAQ#asynctask an analogy of a restaurant]]
     * [[What can be done in AsyncTasks|PocketMine Plugin Development FAQ#what can be done in asynctasks]]
   * [[Data Saving|PocketMine Plugin Development FAQ#data saving]]
     * [[YAML vs SQL|PocketMine Plugin Development FAQ#yaml vs sql]]
