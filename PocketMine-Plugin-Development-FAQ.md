@@ -205,6 +205,24 @@ Oh the other hand, SQL has these advantages:
 
 Of course, the best solution is to let the users pick what database to use and bear their own consequences! See [SimpleAuth](https://github.com/PocketMine/SimpleAuth) for how to support switching between multiple database types.
 
+# General gameplay
+## Coordinate system
+### Conversion of yaw+pitch to a unit vector <sup>[_src_](https://github.com/pmmp/PocketMine-MP/blob/master/src/pocketmine/entity/Entity.php#L1063-L1070)</sup>
+```php
+$y = -sin(deg2rad($this->pitch));
+$xz = cos(deg2rad($this->pitch));
+$x = -$xz * sin(deg2rad($this->yaw));
+$z = $xz * cos(deg2rad($this->yaw));
+return (new Vector3($x $y, $z))->normalize(); // TODO: verify if normalize() call is needed
+```
+
+### Evaluate yaw and pitch looking from $pos1 to $pos2 <sup>[_ref_](https://forums.pmmp.io/threads/direction.2285/#post-23772)</sup>
+```php
+$diff = $pos2->subtract($pos1)->normalize();
+$pitch = asin(-$diff->y);
+$yaw = acos($diff->z / cos($pitch));
+```
+
 ***
 ### Legacy
 | symbol | meaning |
