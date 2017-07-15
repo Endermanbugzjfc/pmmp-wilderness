@@ -191,6 +191,13 @@ So instead of spending the server's core tick time to do stuff that you don't ne
 
 <sup>[_ref_](http://forums.pocketmine.net/threads/how-asynctask-reduces-lag.14056/#post-138729)</sup>
 
+## Stored local copmlex data did not remove them after completion
+Do not pass anything to the AsyncTask (parent) constructor unless you are going to use them in onCompletion() or onProgressUpdate(). If you do so, you must call fetchLocal() in onCompletion() to remove the data.
+
+AsyncTask is not a PluginTask. You do not need to pass arguments to it.
+
+<sup>[_ref_](https://forums.pmmp.io/threads/async-task-spam.3163/)</sup>
+
 # Data saving
 ## YAML vs SQL
 JSON is a subset of YAML. Any valid JSON data can be parsed as YAML. So unless you want to store the data in a compact way (which is pointless for small files, since [the size of each file is always multiples of 4 KB](https://unix.stackexchange.com/q/62049/161897)), YAML seems to always be a better option compared to JSON, unless your data will be parsed by a program that only knows JSON but not YAML. (After all, JSON has a long history but YAML is kind of new, but most languages already have YAML libraries)
