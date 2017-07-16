@@ -191,7 +191,7 @@ So instead of spending the server's core tick time to do stuff that you don't ne
 
 <sup>[_ref_](http://forums.pocketmine.net/threads/how-asynctask-reduces-lag.14056/#post-138729)</sup>
 
-## Stored local copmlex data did not remove them after completion
+## Stored local complex data did not remove them after completion
 Do not pass anything to the AsyncTask (parent) constructor unless you are going to use them in onCompletion() or onProgressUpdate(). If you do so, you must call fetchLocal() in onCompletion() to remove the data.
 
 AsyncTask is not a PluginTask. You do not need to pass arguments to it.
