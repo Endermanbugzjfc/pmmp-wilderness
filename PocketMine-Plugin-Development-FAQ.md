@@ -85,7 +85,7 @@ Regarding the task ID, which is required when using `ServerScheduler::cancelTask
 For example:
 ```php
 class MyTask extends PluginTask{
-    public function onRun($ticks){
+    public function onRun(int $ticks){
         if(needToCancelTask()){
             $this->getOwner()->getServer()->getScheduler()->cancelTask($this->getTaskId());
         }
