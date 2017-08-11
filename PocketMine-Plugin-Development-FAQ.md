@@ -126,7 +126,7 @@ This post is not yet cleaned up:
 <sup>[_ref_](https://forums.pmmp.io/threads/learning-timer-or-task.57/)</sup>
 
 ## What is different between `scheduleDelayedTask`, `scheduleRepeatingTask`, `scheduleDelayedRepeatingTask` and `scheduleAsyncTask`?
-Do not mix them up. There is something called `Task`, where `PluginTask` is a type of `Task; and there is something called `AsyncTask`, which is entirely irrelevant with `Task`.
+Do not mix them up. There is something called `Task`, where `PluginTask` is a type of `Task`; and there is something called `AsyncTask`, which is entirely irrelevant with `Task`.
 
 A `Task` can be scheduled to run after some time, which is `scheduleDelayedTask`; or to run repeatedly at given intervals, starting immediately, which is `scheduleRepeatingTask`; or to start running repeatedly after some time, which is `scheduleDelayedRepeatingTask`. The code in `Task` is executed on the main thread.
 
