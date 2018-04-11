@@ -218,6 +218,37 @@ Of course, the best solution is to let the users pick what database to use and b
 
 # General gameplay
 ## Coordinate system
+The Minecraft coordinate system complies with a right-handed Cartesian coordinate system, i.e. `x cross y = z`, as in this figure:
+
+[![See Wikipedia's article on Right-hand Rule](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Right_hand_rule_cross_product.svg/440px-Right_hand_rule_cross_product.svg.png)](https://en.wikipedia.org/wiki/Right-hand_rule)
+
+In the Minecraft system, Y (the index finger) points upwards (negative Y points downwards). X points eastwards (negative X goes westwards), and Z points southwards (negative Z goes northwards).
+
+Rotation is measured by yaw (a.k.a. azimuth) and pitch. The yaw is the clockwise rotation from the south, i.e.:
+
+| Yaw (Degrees), mod 360 | Yaw (Radians), mod 2&pi; | Direction | One step from (x = 0, z = 0) in this direction |
+| :---: | :---: | :---: |
+| 0 | 0 | South | (0, 1) |
+| 90 | 0.5&pi; | West | (-1, 0) |
+| 180 | &pi; | North | (0, -1) |
+| 270 | 1.5&pi; | East | (1, 0) |
+
+Pitch is the downward rotation. Starting at 0 at the horizontal, it increases to 90&deg; (0.5&pi;) when facing the ground, and decreases to -90&deg; (-0.5&pi;) when facing the sky.
+
+A few cautions:
+* The yaw and pitch are represented in degrees in most places in PocketMine, including `Entity::$yaw` and `Entity::$pitch`.
+* The yaw is not guaranteed to be within the range `[0, 360)`. Be sure to mod 360 before comparing it.
+* PHP's behaviour with `$negative_number % $positive_number` or `fmod($negative_number, $positive_number)`: a negative number is returned. But the yaw can be negative. Be sure to conditionally add 360 to the yaw after `% 360` if it is negative.
+* PHP's `%` operator casts floats to ints. This may affect your results slightly. Use `fmod` instead; but it might still produce negative results.
+
+Here is an alternative to `%`/`fmod` that always produces zero/positive float results:
+
+```php
+function positive_fmod(float $a, float $b) : float{
+    return $a - floor($a / $b) * $b;
+}
+```
+
 ### Conversion of yaw+pitch to a unit vector <sup>[_src_](https://github.com/pmmp/PocketMine-MP/blob/master/src/pocketmine/entity/Entity.php#L1063-L1070)</sup>
 ```php
 $y = -sin(deg2rad($this->pitch));
