@@ -224,10 +224,12 @@ The Minecraft coordinate system complies with a right-handed Cartesian coordinat
 
 In the Minecraft system, Y (the index finger) points upwards (negative Y points downwards). X points eastwards (negative X goes westwards), and Z points southwards (negative Z goes northwards).
 
+The sun and moon come out from the east since Pocket Edition 1.1 <sup>[ref](https://minecraft.gamepedia.com/Day-night_cycle#History)</sup>. Clouds float westward, too <sup>[ref](https://minecraft.gamepedia.com/Cloud#Behavior)</sup>.
+
 Rotation is measured by yaw (a.k.a. azimuth) and pitch. The yaw is the clockwise rotation from the south, i.e.:
 
 | Yaw (Degrees), mod 360 | Yaw (Radians), mod 2&pi; | Direction | One step from (x = 0, z = 0) in this direction |
-| :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: |
 | 0 | 0 | South | (0, 1) |
 | 90 | 0.5&pi; | West | (-1, 0) |
 | 180 | &pi; | North | (0, -1) |
