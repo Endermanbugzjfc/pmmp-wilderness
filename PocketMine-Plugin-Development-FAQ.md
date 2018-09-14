@@ -7,7 +7,7 @@ Visit this page with a bitlink: https://bit.ly/PmDev
 These are pure PHP problems. See [this StackOverflow page](http://stackoverflow.com/q/18050071/3990767) &mdash; it is very detailed.
 
 ## Checking if a value equals to one of the listed values
-While it makes sense in English to say "if the ID is 1, 2, 3 or 4", it's incorrect to write it in PHP as `if($id == [1, 2, 3, 4])` nor `if($id == 1 or 2 or 3 or 4)`. See [this StackOverflow question](https://stackoverflow.com/q/21343646/3990767) for details.
+While it makes sense in English to say "if the ID is 1, 2, 3 or 4", it's incorrect to write it in PHP as `if($id == [1, 2, 3, 4])` nor `if($id == 1 or 2 or 3 or 4)`. See [this StackOverflow question](https://stackoverflow.com/q/21343646/3990767) for details and [this](https://stackoverflow.com/q/5593512/3990767) for more solutions.
 
 ## ClassNotFoundException: Class `a class in your plugin` not found
 Check if your class files are placed and written according to PSR-0 ([check here](https://sof3.github.io/psr.htm)).
